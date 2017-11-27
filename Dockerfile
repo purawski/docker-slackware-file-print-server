@@ -27,6 +27,6 @@ RUN /usr/sbin/update-ca-certificates --fresh &&\
 RUN mkdir -p /var/lib/sbopkg/SBo/`cat /etc/slackware-version | awk -F' ' '{print $2}'` \
     /var/lib/sbopkg/queues /var/log/sbopkg /var/cache/sbopkg /tmp/SBo
 RUN sbopkg -r &&\
-    sqg -i
+    sqg -a
 RUN cp /etc/samba/smb.conf-sample /etc/samba/smb.conf
 EXPOSE 631
